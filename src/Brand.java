@@ -12,6 +12,10 @@ public class Brand {
         }
     });
 
+    static {
+        createBrands();
+    }
+
     public Brand(int id, String name) {
         this.id = id;
         this.name = name;
@@ -31,36 +35,35 @@ public class Brand {
     }
 
 
-    public static void createBrands(){
-        brandList.add(new Brand(1,"Samsung"));
-        brandList.add(new Brand(2,"Lenovo"));
-        brandList.add(new Brand(3,"Apple"));
-        brandList.add(new Brand(4,"Huawei"));
-        brandList.add(new Brand(5,"Casper"));
-        brandList.add(new Brand(6,"Asus"));
-        brandList.add(new Brand(7,"HP"));
-        brandList.add(new Brand(8,"Xiaomi"));
-        brandList.add(new Brand(9,"Monster"));
+    public static void createBrands() {
+        brandList.add(new Brand(1, "Samsung"));
+        brandList.add(new Brand(2, "Lenovo"));
+        brandList.add(new Brand(3, "Apple"));
+        brandList.add(new Brand(4, "Huawei"));
+        brandList.add(new Brand(5, "Casper"));
+        brandList.add(new Brand(6, "Asus"));
+        brandList.add(new Brand(7, "HP"));
+        brandList.add(new Brand(8, "Xiaomi"));
+        brandList.add(new Brand(9, "Monster"));
 
     }
 
-    static void printBrands(){
+    static void printBrands() {
         System.out.println("Marka Listesi ");
-        for(Brand brand: brandList){
-            System.out.println(brand.id + " "+ brand.getName());
+        for (Brand brand : brandList) {
+            System.out.println(brand.id + " " + brand.getName());
         }
         System.out.println("-----------------------------");
     }
 
-    public static Brand getBrand(int id){
-        for(Brand b: brandList){
-            if(id==b.getId()){
+    public static Brand getBrand(int id) {
+        for (Brand b : brandList) {
+            if (id == b.getId()) {
                 return b;
             }
         }
         return null;
     }
-
 
 
     public static TreeSet<Brand> getBrandList() {
